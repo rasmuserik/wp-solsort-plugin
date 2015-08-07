@@ -21,10 +21,10 @@ add_action( 'wp_print_footer_scripts', 'script_solsortjs' );
 /**
  * Solsort Logo Widget
  */
-class solsort_logo extends WP_Widget {
+class Solsort_Logo extends WP_Widget {
     /** constructor */
     function __construct() {
-        parent::WP_Widget(false, $name = 'Solsort logo');  
+        //parent::WP_Widget(false, $name = 'Solsort logo');  
     }
     /** @see WP_Widget::widget */
     function widget($args, $instance) { 
@@ -38,5 +38,7 @@ class solsort_logo extends WP_Widget {
 <?php
     }
 }
-add_action('widgets_init', create_function('', 'return register_widget("solsort_logo");'));
+add_action('widgets_init', function() {
+  register_widget( 'Solsort_Logo' );
+});
 ?>
