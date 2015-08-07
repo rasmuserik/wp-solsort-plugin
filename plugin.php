@@ -24,7 +24,7 @@ add_action( 'wp_print_footer_scripts', 'script_solsortjs' );
 class Solsort_Logo extends WP_Widget {
     /** constructor */
     function __construct() {
-        //parent::WP_Widget(false, $name = 'Solsort logo');  
+        parent::__construct(false, $name = 'Solsort logo');  
     }
     /** @see WP_Widget::widget */
     function widget($args, $instance) { 
